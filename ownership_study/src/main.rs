@@ -5,5 +5,5 @@ fn main() {
 }
 
 fn print_bytes(s: &String){
-    let bytes = s.as_bytes();
+    let _bytes = s.as_bytes();
 }
