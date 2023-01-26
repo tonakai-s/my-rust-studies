@@ -10,9 +10,16 @@ fn main() {
     // let ref2 = &mut s2;
     append_str_to_param(&mut s2);
     println!("{}", s2);
+
+    let mut _s3 = String::from("Testing references");
+
+    let _r1 = &_s3; //No problem
+    let _r2 = &_s3; //No problem
+                    //let r3 = &mut s3; BIG PROBLEM
 }
 
-fn get_word_length(str: &String) -> usize { //&String means that the type os the parameter, is a reference to a variable of type String. 
+fn get_word_length(str: &String) -> usize {
+    //&String means that the type os the parameter, is a reference to a variable of type String.
     //Since this is a borrow, the function not own the parameter, it's only a reference.
     //So by default the references, like variables, are immutables.
     str.len()
