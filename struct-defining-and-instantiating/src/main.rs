@@ -28,6 +28,7 @@ fn main() {
     };
 }
 
+#[allow(dead_code)]
 //Structure is formed by fields with name and their type.
 struct User {
     active: bool,
