@@ -13,22 +13,8 @@ fn function2() -> IOResult<()> { Ok(()) }
 //  restaurant::hosting::add_to_waitlist();
 pub use crate::front_of_house::hosting;
 
-
-mod front_of_house {
-    pub mod hosting {
-        pub fn add_to_waitlist() {}
-
-        fn seat_at_table() {}
-    }
-
-    mod serving {
-        fn take_order() {}
-
-        fn serve_order() {}
-
-        fn take_payment() {}
-    }
-}
+pub mod front_of_house;
+pub mod using_front;
 
 pub fn eat_in_restaurant() {
     let mut meal = back_of_house::Breakfast::summer("Rye");
