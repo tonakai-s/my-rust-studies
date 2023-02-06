@@ -1,6 +1,7 @@
+#[allow(dead_code)]
 fn main() {
     let s1 = String::from("OHMAGAAAA");
-    let len = get_word_length(&s1); //& means to pass a references of the variable s1 to inside the funcion.
+    let _len = get_word_length(&s1); //& means to pass a references of the variable s1 to inside the funcion.
     // println!("The size of the word {s1} is {len}");
 
     //To reference be muttable, variable need to have mut keyword, and algo the param passed need to have &mut.

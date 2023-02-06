@@ -1,8 +1,10 @@
 use std::fmt::Result;
 use std::io::Result as IOResult;
 
+#[allow(dead_code)]
 fn function1() -> Result { Ok(()) }
 
+#[allow(dead_code)]
 fn function2() -> IOResult<()> { Ok(()) }
 
 //Create a shortcut to the module.
@@ -28,19 +30,22 @@ pub fn eat_in_restaurant() {
     //This works because the use definicion created above.
     hosting::add_to_waitlist();
 
-    let order1 = back_of_house::Apptizer::Salad;
-    let order2 = back_of_house::Apptizer::Soup;
+    let _order1 = back_of_house::Apptizer::Salad;
+    let _order2 = back_of_house::Apptizer::Soup;
 }
 
-mod Customer {
+#[allow(dead_code)]
+mod customer {
     pub fn eat_at_restaurant() {
         //The call need to be on the same scope os use declaration.
         super::hosting::add_to_waitlist();
     }
 }
 
+#[allow(dead_code)]
 fn deliver_order() {}
 
+#[allow(dead_code)]
 mod back_of_house {
     //When enum is public, all the variants are public.
     pub enum Apptizer {
