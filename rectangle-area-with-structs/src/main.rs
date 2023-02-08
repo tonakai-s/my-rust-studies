@@ -21,6 +21,7 @@ impl Rectangle {
     }
 
     fn area(&self) -> u32 {
+        println!("This is my self: {:?}", &self);
         self.width * self.height
     }
 

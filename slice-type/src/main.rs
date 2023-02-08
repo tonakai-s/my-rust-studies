@@ -17,6 +17,10 @@ fn main() {
     //When using type &str instead &String on fn param.
     let native_slice_literal = nice_first_word(string_literal);
     println!("{}", native_slice_literal);
+
+    let my_string = String::from("I love brócolis");
+    let i_love = &my_string[..];
+    println!("{i_love}");
 }
 
 fn first_word(s: &String) -> usize {
