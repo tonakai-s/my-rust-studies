@@ -4,8 +4,9 @@
 //or “Add Amir to Sales.” Then let the user retrieve
 //a list of all people in a department or all people
 //in the company by department, sorted alphabetically.
-use std::collections::HashMap;
-use std::io;
+use std::{io, collections::HashMap};
+
+mod employee_actions;
 
 fn main() {
     let mut company_employees: HashMap<String, Vec<String>> = HashMap::new();
@@ -19,11 +20,13 @@ fn main() {
             .read_line(&mut solicitation)
             .unwrap();
 
-        match solicitation.as_str().trim() {
-            "Add" => add_employee(
+        solicitation = solicitation.trim().to_string();
+
+        match solicitation.as_str() {
+            "Add" => employee_actions::add::employee(
                 &mut company_employees,
             ),
-            "List" => list_employees(&company_employees),
+            "List" => employee_actions::list::employees(&company_employees),
             "Quit" => {
                 println!("Good bye lovely people! (ღ˘⌣˘ღ)");
                 break;
@@ -34,34 +37,4 @@ fn main() {
             },
         }
     }
-}
-
-fn add_employee(
-    company_map: &mut HashMap<String, Vec<String>>,
-) {
-    let mut employee_name = String::new();
-
-    println!("\nWich the first name of the employee?");
-    io::stdin()
-        .read_line(&mut employee_name)
-        .unwrap();
-
-    let mut department = String::new();
-    println!("\nAdd him into wich department?");
-    io::stdin()
-        .read_line(&mut department)
-        .unwrap();
-
-    let current_employees = company_map.entry(department.trim().to_string()).or_insert(Vec::new());
-    current_employees.push(employee_name.trim().to_string());
-
-    println!("✿ Employee added successfully! ✿");
-    println!("---------------------------------\n");
-}
-
-fn list_employees(
-    map_of_employees: &HashMap<String, Vec<String>>
-) {
-    println!("Here's the map of the company:");
-    println!("{:#?}", map_of_employees);
 }
