@@ -11,3 +11,6 @@
 #Diferences between Statements and Expressions.
 Statements => Are instructions that perform some actions and do not return a value.
 Expressions => Evaluate to a resultant value.
+
+Common questions.
+Why print! execute after asking for an input when declared before?
