@@ -63,28 +63,30 @@ where
     }
 
 fn main() {
-    // let word1 = String::from("abcd");
-    // let word2 = "xyz";
+    let word1 = "xyzaa";
+    let longest_slice;
 
-    // let longest_slice = longest(word1.as_str(), word2);
+    let word2 = String::from("abcd");
 
-    // println!("The biggest slice is {}", longest_slice);
+    longest_slice = longest(word1, word2.as_str());
 
-    let my_part = String::from("Test string part");
-    let my_instance = ImportantExcerpt {
-        part: my_part.as_str()
-    };
+    println!("The biggest slice is {}", longest_slice);
+
+    // let my_part = String::from("Test string part");
+    // let my_instance = ImportantExcerpt {
+    //     part: my_part.as_str()
+    // };
 
     //This throws an error because my_instance is used after the move of my_part.
         // let second_part = my_part;
 
-    println!("{:#?}", my_instance);
+    // println!("{:#?}", my_instance);
 
-    let announcement = String::from("My announcement");
-    my_instance.annouce_and_return_part(announcement.as_str());
+    // let announcement = String::from("My announcement");
+    // my_instance.annouce_and_return_part(announcement.as_str());
 
-    let word3 = String::from("CAVALO");
-    let word4 = "TESTE";
+    // let word3 = String::from("CAVALO");
+    // let word4 = "TESTE";
 
-    longest_with_announcement(word3.as_str(), word4, announcement);
+    // longest_with_announcement(word3.as_str(), word4, announcement);
 }
