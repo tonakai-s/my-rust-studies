@@ -63,10 +63,10 @@ mod tests {
         assert_eq!(result, 5);
     }
 
-    #[test]
-    fn another(){
-        panic!("Make this code fail");
-    }
+    // #[test]
+    // fn another(){
+    //     panic!("Make this code fail");
+    // }
 
     #[test]
     fn larger_can_hold_smaller(){
