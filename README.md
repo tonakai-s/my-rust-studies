@@ -1,4 +1,7 @@
-#Cargo
+# my-rust-studies
+A simple repository where I put my own tests while learning Rust reading the [Rust Book](https://doc.rust-lang.org/book/title-page.html).
+
+## Cargo
 
 ```cargo new PROJECT_NAME ``` Create a new project.
 
@@ -8,11 +11,11 @@
 
 ```cargo check``` => Check the code to make sure it compiles, but not run it.
 
-#Diferences between Statements and Expressions.
+## Diferences between Statements and Expressions.
 Statements => Are instructions that perform some actions and do not return a value.
 Expressions => Evaluate to a resultant value.
 
-#Tests
+## Tests
 ```rust
 pub fn add_two(value: i32) -> i32 {
     if(value < 0){
